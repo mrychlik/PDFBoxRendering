@@ -7,7 +7,7 @@ This is a Java Maven project
 The project is created with Emacs, using Java language server (jdtls).
 Critical setup includes
 
-
+<pre>
 ;; JAVA development setup
 (condition-case nil
     (require 'use-package)
@@ -54,7 +54,7 @@ Critical setup includes
 (setenv "JAVA_HOME" "/usr/lib/jvm/java-11-openjdk-amd64/")
 
 ;; End of JAVA development setup
-
+</pre>
 
 
 
