@@ -24,7 +24,7 @@
       Starting with an example from PDFBox repository, develops a class
       to track the graphics stream.
     </description>
-    <!--url>https://github.com/JonathanLink/PDFLayoutTextStripper</url-->
+    <url>https://github.com/mrychlik/PDFBoxRendering</url>
     <developers>
         <developer>
             <name>Marek Rychlik</name>
