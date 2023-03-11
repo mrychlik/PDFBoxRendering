@@ -53,7 +53,7 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
         super(page);
     }
 
- static void main(String[] args) throws IOException
+    public static void main(String[] args) throws IOException
     {
         File file = new File("samples/bus.pdf");
 
