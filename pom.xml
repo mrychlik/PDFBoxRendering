@@ -19,7 +19,7 @@
     </distributionManagement>
 
     <packaging>jar</packaging>
-    <name>Rendering</name>
+    <name>PDFBoxRendering</name>
     <description>
       Starting with an example from PDFBox repository, develops a class
       to track the graphics stream.
@@ -39,12 +39,12 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <!-- <scm> -->
-    <!--     <url>https://github.com/JonathanLink/PDFLayoutTextStripper</url> -->
-    <!--     <connection>scm:git:git@github.com:JonathanLink/PDFLayoutTextStripper.git</connection> -->
-    <!--     <developerConnection>scm:git:git@github.com:JonathanLink/PDFLayoutTextStripper.git</developerConnection> -->
-    <!--     <tag>PDFLayoutTextStripper-2.2.5</tag> -->
-    <!-- </scm> -->
+    <scm>
+        <url>https://github.com/mrychlik/PDFBoxRendering</url>
+        <connection>scm:git:git@github.com:mrychlik/PDFBoxRendering.git</connection>
+        <developerConnection>scm:git:git@github.com:mrychlik/PDFBoxRendering.git</developerConnection>
+        <tag>PDFBoxRendering-0.0.1</tag>
+    </scm>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
