@@ -13,8 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
   
 /**
-* This is an example on how to extract words from PDF document
-*/
+ * Source: <a href="https://www.tutorialkart.com/pdfbox/extract-words-from-pdf-document/">Tutorialkart</a>
+ * This is an example on how to extract words from PDF document
+ */
 public class GetWords extends PDFTextStripper {
      
     static List<String> words = new ArrayList<String>();
