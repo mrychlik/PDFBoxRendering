@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
   
 /**
- * Source: <a href="https://www.tutorialkart.com/pdfbox/extract-words-from-pdf-document/">Tutorialkart</a>
+ * Original Source: <a href="https://www.tutorialkart.com/pdfbox/extract-words-from-pdf-document/">Tutorialkart</a>
  * This is an example on how to extract words from PDF document
  */
 public class GetWords extends PDFTextStripper {
