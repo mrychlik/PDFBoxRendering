@@ -76,8 +76,7 @@ public class GetWordLocationAndSize extends PDFTextStripper {
      */
     private static void usage()
     {
-        System.err.println(
-                "Usage: java " + GetWordLocationAndSize.class.getName() + " <input-pdf>");
+        System.err.println("Usage: java " + GetWordLocationAndSize.class.getName() + " <input-pdf>");
     }
 
 }
