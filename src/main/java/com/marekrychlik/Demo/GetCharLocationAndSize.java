@@ -1,4 +1,4 @@
-package com.rychlik.Demo;
+package com.marekrychlik.Demo;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
