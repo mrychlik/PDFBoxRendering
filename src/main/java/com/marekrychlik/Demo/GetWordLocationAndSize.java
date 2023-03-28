@@ -2,11 +2,16 @@ package com.marekrychlik.Demo;
 
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.TextPosition;
+import org.apache.pdfbox.pdmodel.PDDocument;
   
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.geom.Rectangle2D;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.OutputStreamWriter;
+
 
 public class GetWordLocationAndSize extends PDFTextStripper {
     public GetWordLocationAndSize() throws IOException {
@@ -48,5 +53,17 @@ public class GetWordLocationAndSize extends PDFTextStripper {
         }
         System.out.println(builder.toString() + " [(X=" + boundingBox.getX() + ",Y=" + boundingBox.getY()
                  + ") height=" + boundingBox.getHeight() + " width=" + boundingBox.getWidth() + "]");
+    }
+
+    public static void main(String args[]) {
+	PDDocument document = PDDocument.load(resource);
+	PDFTextStripper stripper = new GetWordLocationAndSize();
+	stripper.setSortByPosition(true);
+	stripper.setStartPage(0);
+	stripper.setEndPage(document.getNumberOfPages());
+
+	Writer dummy = new OutputStreamWriter(new ByteArrayOutputStream());
+	stripper.writeText(document, dummy);
+
     }
 }
