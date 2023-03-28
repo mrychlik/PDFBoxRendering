@@ -164,8 +164,8 @@
 		<archive>
 		  <manifest>
                     <!--mainClass>com.marekrychlik.Demo.RemoveAllText</mainClass-->
-                    <!--mainClass>com.marekrychlik.Demo.GetCharLocationAndSize</mainClass -->		    
-                    <mainClass>com.marekrychlik.Demo.GetCharLocationAndSize</mainClass>		    
+                    <!--mainClass>com.marekrychlik.Demo.GetCharLocationAndSize</mainClass-->		    
+                    <mainClass>com.marekrychlik.Demo.GetWords</mainClass>		    
 		  </manifest>
 		</archive>
 	      </configuration>
