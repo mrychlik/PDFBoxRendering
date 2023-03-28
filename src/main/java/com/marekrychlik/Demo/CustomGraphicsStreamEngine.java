@@ -190,7 +190,7 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
     protected void showGlyph(Matrix textRenderingMatrix, PDFont font, int code, Vector displacement)
             throws IOException
     {
-        System.out.print("showGlyph " + code);
+        System.out.print("showGlyph " + code + " ");
         super.showGlyph(textRenderingMatrix, font, code, displacement);
     }
     
