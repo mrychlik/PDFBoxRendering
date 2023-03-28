@@ -12,7 +12,8 @@ import java.io.Writer;
 import java.util.List;
   
 /**
-* This is an example on how to get the x/y coordinates and size of each character in PDF
+ * Source: <a href="https://www.tutorialkart.com/pdfbox/how-to-extract-coordinates-or-position-of-characters-in-pdf/"></a>
+ * This is an example on how to get the x/y coordinates and size of each character in PDF
 */
 public class GetCharLocationAndSize extends PDFTextStripper {
   
