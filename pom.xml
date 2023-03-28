@@ -163,7 +163,7 @@
 		</descriptorRefs>
 		<archive>
 		  <manifest>
-                    <mainClass>com.howtodoinjava.app.MainClass</mainClass>
+                    <mainClass>com.rychlik.Demo.RemoveAllText</mainClass>
 		  </manifest>
 		</archive>
 	      </configuration>
