@@ -1,16 +1,12 @@
 package com.marekrychlik.Demo;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.TextPosition;
   
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.geom.Rectangle2D;
 
 public class GetWordLocationAndSize extends PDFTextStripper {
     public GetWordLocationAndSize() throws IOException {
