@@ -27,8 +27,11 @@ public class GetWords extends PDFTextStripper {
      * @throws IOException If there is an error parsing the document.
      */
     public static void main( String[] args ) throws IOException {
+        if (args.length != 1)
+        {
+            usage();
+        }
         PDDocument document = null;
-        String fileName = "apache.pdf"; // replace with your PDF file name
         try {
             document = PDDocument.load( new File(fileName) );
             PDFTextStripper stripper = new GetWords();
@@ -62,5 +65,14 @@ public class GetWords extends PDFTextStripper {
                 words.add(word);
             }
         }
+    }
+
+    /**
+     * This will print the usage for this document.
+     */
+    private static void usage()
+    {
+        System.err.println(
+                "Usage: java " + GetWords.class.getName() + " <input-pdf>");
     }
 }
