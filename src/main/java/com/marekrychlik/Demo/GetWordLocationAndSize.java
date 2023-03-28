@@ -57,7 +57,11 @@ public class GetWordLocationAndSize extends PDFTextStripper {
     }
 
     public static void main(String args[]) {
-	PDDocument document = PDDocument.load(resource);
+        if (args.length != 1)
+        {
+            usage();
+        }
+	PDDocument document = PDDocument.load(argv[0]);
 	PDFTextStripper stripper = new GetWordLocationAndSize();
 	stripper.setSortByPosition(true);
 	stripper.setStartPage(0);
@@ -67,4 +71,13 @@ public class GetWordLocationAndSize extends PDFTextStripper {
 	stripper.writeText(document, dummy);
 
     }
+    /**
+     * This will print the usage for this document.
+     */
+    private static void usage()
+    {
+        System.err.println(
+                "Usage: java " + GetWordLocationAndSize.class.getName() + " <input-pdf>");
+    }
+
 }
