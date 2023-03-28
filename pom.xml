@@ -163,7 +163,7 @@
 		</descriptorRefs>
 		<archive>
 		  <manifest>
-                    <mainClass>com.rychlik.Demo.RemoveAllText</mainClass>
+                    <mainClass>com.marekrychlik.Demo.RemoveAllText</mainClass>
 		  </manifest>
 		</archive>
 	      </configuration>
