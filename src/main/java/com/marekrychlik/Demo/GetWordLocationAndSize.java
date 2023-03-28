@@ -11,6 +11,7 @@ import java.awt.geom.Rectangle2D;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 
 public class GetWordLocationAndSize extends PDFTextStripper {
