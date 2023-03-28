@@ -53,30 +53,33 @@ public class GetWordLocationAndSize extends PDFTextStripper {
             builder.append(text.getUnicode());
         }
         System.out.println(builder.toString() + " [(X=" + boundingBox.getX() + ",Y=" + boundingBox.getY()
-                 + ") height=" + boundingBox.getHeight() + " width=" + boundingBox.getWidth() + "]");
+			   + ") height=" + boundingBox.getHeight() + " width=" + boundingBox.getWidth() + "]");
     }
 
-    public static void main(String args[]) {
-        if (args.length != 1)
-        {
-            usage();
-        }
-	PDDocument document = PDDocument.load(argv[0]);
-	PDFTextStripper stripper = new GetWordLocationAndSize();
-	stripper.setSortByPosition(true);
-	stripper.setStartPage(0);
-	stripper.setEndPage(document.getNumberOfPages());
+	public static void main(String args[]) {
+	if (args.length != 1) {
+	    usage();
+	}
+	try (PDDocument document = PDDocument.load(new File(args[0]))) {
+	    PDFTextStripper stripper = new GetWordLocationAndSize();
+	    stripper.setSortByPosition(true);
+	    stripper.setStartPage(0);
+	    stripper.setEndPage(document.getNumberOfPages());
 
-	Writer dummy = new OutputStreamWriter(new ByteArrayOutputStream());
-	stripper.writeText(document, dummy);
+	    Writer dummy = new OutputStreamWriter(new ByteArrayOutputStream());
+	    stripper.writeText(document, dummy);
 
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
     }
+
     /**
      * This will print the usage for this document.
      */
     private static void usage()
     {
-        System.err.println("Usage: java " + GetWordLocationAndSize.class.getName() + " <input-pdf>");
+	System.err.println("Usage: java " + GetWordLocationAndSize.class.getName() + " <input-pdf>");
     }
 
 }
