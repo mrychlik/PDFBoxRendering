@@ -31,6 +31,7 @@ public class GetWords extends PDFTextStripper {
         {
             usage();
         }
+	String fileName = args[0];
         PDDocument document = null;
         try {
             document = PDDocument.load( new File(fileName) );
