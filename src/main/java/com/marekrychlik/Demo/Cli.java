@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 
 @Command(name = "checksum", mixinStandardHelpOptions = true, version = "checksum 4.0",
          description = "Prints the checksum (SHA-256 by default) of a file to STDOUT.")
-class Cli implements Callable<Integer> {
+class CheckSum implements Callable<Integer> {
 
     @Parameters(index = "0", description = "The file whose checksum to calculate.")
     private File file;
