@@ -11,8 +11,8 @@ import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.util.concurrent.Callable;
 
-@Command(name = "pdfcli", mixinStandardHelpOptions = true, version = "checksum 0.0.1",
-         description = "Performs actions on PDF files.")
+@Command(name = "pdfcli", mixinStandardHelpOptions = true, version = "checksum 0.0.1", description = "Performs actions on PDF files.")
+
 class PDFCli implements Callable<Integer> {
 
     @Parameters(index = "0", description = "The input PDF file.")
@@ -20,7 +20,7 @@ class PDFCli implements Callable<Integer> {
     @Parameters(index = "1", description = "The output PDF file.")
     private File outfile;
 
-    @Option(names = {"-r", "--remove-all-text"}, description = "Removes all text from PDF")
+    @Option(names = { "-r", "--remove-all-text" }, description = "Removes all text from PDF");
 
 
     @Override
