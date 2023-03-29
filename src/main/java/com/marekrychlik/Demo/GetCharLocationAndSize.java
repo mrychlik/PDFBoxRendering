@@ -64,8 +64,7 @@ public class GetCharLocationAndSize extends PDFTextStripper {
      */
     private static void usage()
     {
-        System.err.println(
-			   "Usage: java " + GetCharLocationAndSize.class.getName() + " <input-pdf>");
+        System.err.println("Usage: java " + GetCharLocationAndSize.class.getName() + " <input-pdf>");
     }
 
 
