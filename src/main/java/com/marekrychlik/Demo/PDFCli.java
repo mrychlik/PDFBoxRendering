@@ -27,7 +27,7 @@ class PDFCli implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception { // your business logic goes here...
-        System.out.printf("Hello");
+        System.out.println("Hello");
         return 0;
     }
 
