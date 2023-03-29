@@ -17,6 +17,7 @@ class PDFCli implements Callable<Integer> {
 
     @Parameters(index = "0", description = "The input PDF file.")
     private File infile;
+
     @Parameters(index = "1", description = "The output PDF file.")
     private File outfile;
 
