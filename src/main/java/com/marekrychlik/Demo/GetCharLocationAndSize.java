@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Source: <a href="https://www.tutorialkart.com/pdfbox/how-to-extract-coordinates-or-position-of-characters-in-pdf/">TutorialKart</a>
  * This is an example on how to get the x/y coordinates and size of each character in PDF
-*/
+ */
 public class GetCharLocationAndSize extends PDFTextStripper {
   
     public GetCharLocationAndSize() throws IOException {
@@ -25,9 +25,9 @@ public class GetCharLocationAndSize extends PDFTextStripper {
      */
     public static void main( String[] args ) throws IOException {
         if (args.length != 1)
-        {
-            usage();
-        }
+	    {
+		usage();
+	    }
         PDDocument document = null;
         String fileName = args[0];
         try {
@@ -54,8 +54,8 @@ public class GetCharLocationAndSize extends PDFTextStripper {
     protected void writeString(String string, List<TextPosition> textPositions) throws IOException {
         for (TextPosition text : textPositions) {
             System.out.println(text.getUnicode()+ " [(X=" + text.getXDirAdj() + ",Y=" +
-                    text.getYDirAdj() + ") height=" + text.getHeightDir() + " width=" +
-                    text.getWidthDirAdj() + "]");
+			       text.getYDirAdj() + ") height=" + text.getHeightDir() + " width=" +
+			       text.getWidthDirAdj() + "]");
         }
     }
 
@@ -65,7 +65,7 @@ public class GetCharLocationAndSize extends PDFTextStripper {
     private static void usage()
     {
         System.err.println(
-                "Usage: java " + GetCharLocationAndSize.class.getName() + " <input-pdf>");
+			   "Usage: java " + GetCharLocationAndSize.class.getName() + " <input-pdf>");
     }
 
 
