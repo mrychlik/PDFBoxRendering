@@ -56,7 +56,7 @@ public class GetWordLocationAndSize extends PDFTextStripper {
 			   + ") height=" + boundingBox.getHeight() + " width=" + boundingBox.getWidth() + "]");
     }
 
-	public static void main(String args[]) {
+    public static void main(String args[]) {
 	if (args.length != 1) {
 	    usage();
 	}
@@ -70,7 +70,7 @@ public class GetWordLocationAndSize extends PDFTextStripper {
 	    stripper.writeText(document, dummy);
 
 	} catch (IOException e) {
-		e.printStackTrace();
+	    e.printStackTrace();
 	}
     }
 
