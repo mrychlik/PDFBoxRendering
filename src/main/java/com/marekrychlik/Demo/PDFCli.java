@@ -15,8 +15,10 @@ import java.util.concurrent.Callable;
          description = "Performs actions on PDF files.")
 class PDFCli implements Callable<Integer> {
 
-    @Parameters(index = "0", description = "The file whose checksum to calculate.")
-    private File file;
+    @Parameters(index = "0", description = "The input PDF file.")
+    private File infile;
+    @Parameters(index = "1", description = "The output PDF file.")
+    private File outfile;
 
     @Option(names = {"-r", "--remove-all-text"}, description = "Removes all text from PDF")
 
