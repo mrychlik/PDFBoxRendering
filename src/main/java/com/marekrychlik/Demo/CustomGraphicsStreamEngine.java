@@ -58,11 +58,11 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
         File file = new File("samples/bus.pdf");
 
         try (PDDocument doc = PDDocument.load(file))
-        {
-            PDPage page = doc.getPage(0);
-            CustomGraphicsStreamEngine engine = new CustomGraphicsStreamEngine(page);
-            engine.run();
-        }
+	    {
+		PDPage page = doc.getPage(0);
+		CustomGraphicsStreamEngine engine = new CustomGraphicsStreamEngine(page);
+		engine.run();
+	    }
     }
     
     /**
@@ -75,17 +75,17 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
         processPage(getPage());
 
         for (PDAnnotation annotation : getPage().getAnnotations())
-        {
-            showAnnotation(annotation);
-        }
+	    {
+		showAnnotation(annotation);
+	    }
     }
     
     @Override
     public void appendRectangle(Point2D p0, Point2D p1, Point2D p2, Point2D p3) throws IOException
     {
         System.out.printf("appendRectangle %.2f %.2f, %.2f %.2f, %.2f %.2f, %.2f %.2f%n",
-                p0.getX(), p0.getY(), p1.getX(), p1.getY(),
-                p2.getX(), p2.getY(), p3.getX(), p3.getY());
+			  p0.getX(), p0.getY(), p1.getX(), p1.getY(),
+			  p2.getX(), p2.getY(), p3.getX(), p3.getY());
     }
 
     @Override
@@ -188,7 +188,7 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
      */
     @Override
     protected void showGlyph(Matrix textRenderingMatrix, PDFont font, int code, Vector displacement)
-            throws IOException
+	throws IOException
     {
         System.out.print("showGlyph " + code + " ");
         super.showGlyph(textRenderingMatrix, font, code, displacement);
