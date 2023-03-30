@@ -64,9 +64,8 @@ public class CLITester {
 
       if(cmd.hasOption("D")) {
          Properties properties = cmd.getOptionProperties("D");
-         System.out.println("Class: " + properties.getProperty("class"));
-         System.out.println("Roll No: " + properties.getProperty("rollNo"));
-         System.out.println("Name: " + properties.getProperty("name"));
+         System.out.println("Log: " + properties.getProperty("logFile"));
+         System.out.println("Operator: " + properties.getProperty("operator"));
       }
    }
    public static int getSum(String[] args) {
