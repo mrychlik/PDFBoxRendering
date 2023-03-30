@@ -6,8 +6,11 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.Option;
+import org.apache.commons.cli.HelpFormatter;
 
 import java.util.Properties;
+import java.io.PrintWriter;
+
 
 public class CLITester {
    public static void main(String[] args) throws ParseException {
@@ -67,6 +70,8 @@ public class CLITester {
          System.out.println("Log: " + properties.getProperty("logFile"));
          System.out.println("Operator: " + properties.getProperty("operator"));
       }
+
+
    }
    public static int getSum(String[] args) {
       int sum = 0;
@@ -82,4 +87,13 @@ public class CLITester {
       }
       return multiplication;
    }
+
+    private static void usage() {
+	HelpFormatter formatter = new HelpFormatter();
+
+	final PrintWriter writer = new PrintWriter(System.out);
+	formatter.printUsage(writer,80,"CLITester", options);
+	writer.flush();
+    }
+	
 }
