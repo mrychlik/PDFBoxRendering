@@ -28,7 +28,7 @@ public class CLITester {
           .desc("use given file for log" )
           .build();
 
-      // options.addOption(logfile);
+      options.addOption(logfile);
 
       Option propertyOption = Option.builder()
 	  .longOpt("D")
@@ -39,7 +39,7 @@ public class CLITester {
 	  .desc("use value for given properties" )
 	  .build();
 
-      options.addOption(logfile);
+      options.addOption(propertyOption);
       
       //***Parsing Stage***
       //Create a parser
