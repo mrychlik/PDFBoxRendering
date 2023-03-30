@@ -5,6 +5,7 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.Option;
 
 public class CLITester {
    public static void main(String[] args) throws ParseException {
@@ -17,6 +18,23 @@ public class CLITester {
       
       // add option "-m"
       options.addOption("m", false, "multiply numbers");
+
+      Option logfile = Option.builder()
+         .longOpt("logFile")
+         .argName("file" )
+         .hasArg()
+         .desc("use given file for log" )
+         .build();
+
+      options.addOption(logfile);
+      CommandLineParser parser = new DefaultParser();
+      CommandLine cmd = parser.parse( options, args);
+      
+      // has the logFile argument been passed?
+      if(cmd.hasOption("logFile")) {
+         //get the logFile argument passed
+         System.out.println( cmd.getOptionValue( "logFile" ) );
+      }
 
       //***Parsing Stage***
       //Create a parser
