@@ -18,6 +18,10 @@ public class CLITester {
       // create Options object
       Options options = new Options();
       
+      // add option "-h"
+      options.addOption("h",false,"print help");
+
+
       // add option "-a"
       options.addOption("a", false, "add numbers");
       
@@ -71,6 +75,11 @@ public class CLITester {
          System.out.println("Operator: " + properties.getProperty("operator"));
       }
 
+      if(cmd.hasOption("h")) {
+	  usage(options);
+      }
+	  
+	 
 
    }
    public static int getSum(String[] args) {
@@ -88,7 +97,7 @@ public class CLITester {
       return multiplication;
    }
 
-    private static void usage() {
+    private static void usage(Options options) {
 	HelpFormatter formatter = new HelpFormatter();
 
 	final PrintWriter writer = new PrintWriter(System.out);
