@@ -206,7 +206,7 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
     private static void usage()
     {
         System.err.println(
-                "Usage: java " + GetWords.class.getName() + " <input-pdf>");
+                "Usage: java " + CustomGraphicsStreamEngine.class.getName() + " <input-pdf>");
     }
 
 }
