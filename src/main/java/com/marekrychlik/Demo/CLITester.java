@@ -19,12 +19,12 @@ public class CLITester {
       // add option "-m"
       options.addOption("m", false, "multiply numbers");
 
-      // Option logfile = Option.builder()
-      //    .longOpt("logFile")
-      //    .argName("file" )
-      //    .hasArg()
-      //    .desc("use given file for log" )
-      //    .build();
+      Option logfile = Option.builder()
+          .longOpt("logFile")
+          .argName("file" )
+          .hasArg()
+          .desc("use given file for log" )
+          .build();
 
       // options.addOption(logfile);
 
@@ -34,7 +34,7 @@ public class CLITester {
 	  .hasArg()
 	  .valSeparator()
 	  .numberOfArgs(2)
-	  .desc("use given file for log" )
+	  .desc("use value for given properties" )
 	  .build();
 
       options.addOption(logfile);
@@ -58,6 +58,13 @@ public class CLITester {
       if(cmd.hasOption("logFile")) {
          //get the logFile argument passed
          System.out.println( cmd.getOptionValue( "logFile" ) );
+      }
+
+      if(cmd.hasOption("D")) {
+         Properties properties = cmd.getOptionProperties("D");
+         System.out.println("Class: " + properties.getProperty("class"));
+         System.out.println("Roll No: " + properties.getProperty("rollNo"));
+         System.out.println("Name: " + properties.getProperty("name"));
       }
    }
    public static int getSum(String[] args) {
