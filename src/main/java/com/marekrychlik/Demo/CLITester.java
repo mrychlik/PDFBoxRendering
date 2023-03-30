@@ -28,11 +28,11 @@ public class CLITester {
 
       // options.addOption(logfile);
 
-      Option logfile = Option.builder()
+      Option propertyOption = Option.builder()
 	  .longOpt("D")
 	  .argName("property=value" )
 	  .hasArg()
-	  .valSeparator()
+	  .valueSeparator()
 	  .numberOfArgs(2)
 	  .desc("use value for given properties" )
 	  .build();
