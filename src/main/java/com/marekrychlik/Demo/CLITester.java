@@ -7,6 +7,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.Option;
 
+import java.util.Properties;
+
 public class CLITester {
    public static void main(String[] args) throws ParseException {
       //***Definition Stage***
