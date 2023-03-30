@@ -55,7 +55,11 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
 
     public static void main(String[] args) throws IOException
     {
-        File file = new File("samples/bus.pdf");
+	if (args.length != 1) {
+		usage();
+	}
+	String fileName = args[0];
+        File file = new File(fileName);
 
         try (PDDocument doc = PDDocument.load(file))
 	    {
