@@ -182,8 +182,9 @@
               <!--mainClass>com.marekrychlik.Demo.CheckSum</mainClass-->
               <!--mainClass>com.marekrychlik.Demo.PDFCli</mainClass-->
               <!--mainClass>com.marekrychlik.Demo.DrawPrintTextLocations</mainClass-->
-              <mainClass>com.marekrychlik.Demo.CustomGraphicsStreamEngine</mainClass>
-	    </manifest>
+              <!--mainClass>com.marekrychlik.Demo.CustomGraphicsStreamEngine</mainClass-->
+              <mainClass>com.marekrychlik.Demo.CLITester</mainClass>
+ 	    </manifest>
 	  </archive>
 	</configuration>
 	<executions>
