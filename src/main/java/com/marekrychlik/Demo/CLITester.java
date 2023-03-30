@@ -27,15 +27,7 @@ public class CLITester {
          .build();
 
       options.addOption(logfile);
-      CommandLineParser parser = new DefaultParser();
-      CommandLine cmd = parser.parse( options, args);
       
-      // has the logFile argument been passed?
-      if(cmd.hasOption("logFile")) {
-         //get the logFile argument passed
-         System.out.println( cmd.getOptionValue( "logFile" ) );
-      }
-
       //***Parsing Stage***
       //Create a parser
       CommandLineParser parser = new DefaultParser();
@@ -49,6 +41,12 @@ public class CLITester {
          System.out.println("Sum of the numbers: " + getSum(args));
       } else if(cmd.hasOption("m")) {
          System.out.println("Multiplication of the numbers: " + getMultiplication(args));
+      }
+
+      // has the logFile argument been passed?
+      if(cmd.hasOption("logFile")) {
+         //get the logFile argument passed
+         System.out.println( cmd.getOptionValue( "logFile" ) );
       }
    }
    public static int getSum(String[] args) {
