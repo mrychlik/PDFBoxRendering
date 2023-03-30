@@ -19,12 +19,23 @@ public class CLITester {
       // add option "-m"
       options.addOption("m", false, "multiply numbers");
 
+      // Option logfile = Option.builder()
+      //    .longOpt("logFile")
+      //    .argName("file" )
+      //    .hasArg()
+      //    .desc("use given file for log" )
+      //    .build();
+
+      // options.addOption(logfile);
+
       Option logfile = Option.builder()
-         .longOpt("logFile")
-         .argName("file" )
-         .hasArg()
-         .desc("use given file for log" )
-         .build();
+	  .longOpt("D")
+	  .argName("property=value" )
+	  .hasArg()
+	  .valSeparator()
+	  .numberOfArgs(2)
+	  .desc("use given file for log" )
+	  .build();
 
       options.addOption(logfile);
       
