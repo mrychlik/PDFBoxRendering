@@ -199,4 +199,14 @@ public class CustomGraphicsStreamEngine extends PDFGraphicsStreamEngine
     }
     
     // NOTE: there are may more methods in PDFStreamEngine which can be overridden here too.
+
+    /**
+     * This will print the usage for this document.
+     */
+    private static void usage()
+    {
+        System.err.println(
+                "Usage: java " + GetWords.class.getName() + " <input-pdf>");
+    }
+
 }
