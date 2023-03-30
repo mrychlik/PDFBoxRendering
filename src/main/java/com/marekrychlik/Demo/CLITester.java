@@ -104,5 +104,4 @@ public class CLITester {
 	formatter.printUsage(writer,80,"CLITester", options);
 	writer.flush();
     }
-	
 }
