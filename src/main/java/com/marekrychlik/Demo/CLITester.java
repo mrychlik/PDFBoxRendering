@@ -78,10 +78,8 @@ public class CLITester {
 	if(cmd.hasOption("h")) {
 	    usage(options);
 	}
-	  
-	 
-
     }
+
     public static int getSum(String[] args) {
 	int sum = 0;
 	for(int i = 1; i < args.length ; i++) {
@@ -89,6 +87,7 @@ public class CLITester {
 	}
 	return sum;
     }
+
     public static int getMultiplication(String[] args) {
 	int multiplication = 1;
 	for(int i = 1; i < args.length ; i++) {
