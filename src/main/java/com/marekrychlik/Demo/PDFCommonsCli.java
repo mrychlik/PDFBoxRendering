@@ -47,8 +47,6 @@ class PDFCommonsCli {
 	    System.out.println("Log: " + properties.getProperty("logFile"));
 	    System.out.println("Operator: " + properties.getProperty("operator"));
 	}
-
-
     }
 
     private static void usage(Options options) {
