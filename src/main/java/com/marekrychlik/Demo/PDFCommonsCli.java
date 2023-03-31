@@ -24,7 +24,8 @@ class PDFCommonsCli {
 
 	Option removeAllTextOption = Option.builder()
 	    .longOpt("R")
-	    .argName("remove-all-text")
+	    .argName("input-file")
+	    .argName("output-file")	    
 	    .hasArg()
 	    .valueSeparator()
 	    .numberOfArgs(2)
