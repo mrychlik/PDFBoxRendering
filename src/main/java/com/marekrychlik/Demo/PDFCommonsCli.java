@@ -31,10 +31,10 @@ class PDFCommonsCli {
 
 	options.addOption(propertyOption);
 
-	//Create a parser
+	// Create a parser
 	CommandLineParser parser = new DefaultParser();
 
-	//parse the options passed as command line arguments
+	// parse the options passed as command line arguments
 	CommandLine cmd = parser.parse( options, args);
 
 
