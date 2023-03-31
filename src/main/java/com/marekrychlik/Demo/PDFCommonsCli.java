@@ -86,7 +86,7 @@ class PDFCommonsCli {
 	    } else if(cmd.hasOption("C")) {
 		String fileName = cmd.getOptionValue("r");
 		GetCharLocationAndSize.doFile(fileName);
-	    } else if(cmd.hasOption("w")) {	    
+	    } else if(cmd.hasOption("W")) {	    
 
 	    }
 	} catch(IOException e) {
