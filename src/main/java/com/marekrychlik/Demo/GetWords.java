@@ -26,12 +26,15 @@ public class GetWords extends PDFTextStripper {
     /**
      * @throws IOException If there is an error parsing the document.
      */
-    public static void main( String[] args ) throws IOException {
-        if (args.length != 1)
-        {
-            usage();
-        }
-	String fileName = args[0];
+	public static void main(String[] args) throws IOException {
+		if (args.length != 1) {
+			usage();
+		}
+		doFile(args[0]);
+	}
+
+
+    static void doFile(String fileName) throws IOException {
         PDDocument document = null;
         try {
             document = PDDocument.load( new File(fileName) );
