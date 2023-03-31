@@ -53,7 +53,7 @@ class PDFCommonsCli {
 	HelpFormatter formatter = new HelpFormatter();
 
 	final PrintWriter writer = new PrintWriter(System.out);
-	formatter.printUsage(writer,80,"CLITester", options);
+	formatter.printUsage(writer,80,"PDFCommonsCli", options);
 	writer.flush();
     }
 }
