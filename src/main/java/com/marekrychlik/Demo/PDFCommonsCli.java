@@ -22,10 +22,6 @@ class PDFCommonsCli {
 	options.addOption("h", false, "print help");
 
 
-	// add option "-r"
-	options.addOption("r", false, "remove all text");
-      
-
 	Option removeAllTextOption = Option.builder()
 	    .longOpt("R")
 	    .argName("remove-all-text")
