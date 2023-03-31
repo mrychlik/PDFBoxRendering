@@ -65,7 +65,7 @@ class PDFCommonsCli {
 	    .desc("get words")
 	    .build();
 
-	options.addOption(getWordLocationAndSizeOption);
+	options.addOption(getWords);
 
 
 
