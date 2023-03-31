@@ -87,7 +87,7 @@ public final class RemoveAllText
 	    document.save(outputFile);
 	}
     }
-
+    
     private static void processResources(PDResources resources) throws IOException
     {
         for (COSName name : resources.getXObjectNames())
