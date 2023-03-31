@@ -45,8 +45,17 @@ class PDFCommonsCli {
 
 	options.addOption(getCharLocationAndSizeOption);
 
-	// add option "-w"
-	options.addOption("w", false, "get word location and size");
+	Option getWordLocationAndSizeOption = Option.builder()
+	    .longOpt("W")
+	    .argName("get-word-location-and-size")
+	    .hasArg()
+	    .valueSeparator()
+	    .numberOfArgs(1)
+	    .desc("get word location and size")
+	    .build();
+
+	options.addOption(getWordLocationAndSizeOption);
+
 
 
 	Option propertyOption = Option.builder()
