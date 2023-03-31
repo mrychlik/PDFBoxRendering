@@ -27,9 +27,8 @@ class PDFCommonsCli {
 	// add option "-c"
 	options.addOption("m", false, "get character location and size");
 
-	// add option "-2"
+	// add option "-w"
 	options.addOption("m", false, "get word location and size");
-
 
 
 	Option propertyOption = Option.builder()
