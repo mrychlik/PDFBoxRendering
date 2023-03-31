@@ -62,7 +62,7 @@ class PDFCommonsCli {
 	    .hasArg()
 	    .valueSeparator()
 	    .numberOfArgs(1)
-	    .desc("get word location and size")
+	    .desc("get words")
 	    .build();
 
 	options.addOption(getWordLocationAndSizeOption);
