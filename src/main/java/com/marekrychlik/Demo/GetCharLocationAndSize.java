@@ -23,15 +23,18 @@ public class GetCharLocationAndSize extends PDFTextStripper {
     /**
      * @throws IOException If there is an error parsing the document.
      */
-    public static void main( String[] args ) throws IOException {
-        if (args.length != 1)
-	    {
-		usage();
-	    }
-        PDDocument document = null;
-        String fileName = args[0];
+    public static void main(String[] args) throws IOException {
+	if (args.length != 1) {
+	    usage();
+	}
+	String fileName = args[0];
+	doFile(fileName);
+    }
+    
+    public static void doFile(String fileName) throws IOException {
+	PDDocument document = null;
         try {
-            document = PDDocument.load( new File(fileName) );
+	    document = PDDocument.load( new File(fileName) ); 
             PDFTextStripper stripper = new GetCharLocationAndSize();
             stripper.setSortByPosition( true );
             stripper.setStartPage( 0 );
@@ -39,8 +42,7 @@ public class GetCharLocationAndSize extends PDFTextStripper {
   
             Writer dummy = new OutputStreamWriter(new ByteArrayOutputStream());
             stripper.writeText(document, dummy);
-        }
-        finally {
+        } finally {
             if( document != null ) {
                 document.close();
             }
