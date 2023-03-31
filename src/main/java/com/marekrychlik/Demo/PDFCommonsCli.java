@@ -31,7 +31,6 @@ class PDFCommonsCli {
 
 	options.addOption(propertyOption);
 
-
 	//Create a parser
 	CommandLineParser parser = new DefaultParser();
 
