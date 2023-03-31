@@ -24,18 +24,23 @@ class PDFCommonsCli {
 	// add option "-r"
 	options.addOption("r", false, "remove all text");
       
-	// add option "-c"
+
+	Option removeAllTextOption = Option.builder()
+	    .longOpt("R")
+	    .argName("remove-all-text")
+	    .hasArg()
+	    .valueSeparator()
+	    .numberOfArgs(2)
+	    .desc("Remove all text")
+	    .build();
+
+	options.addOption(removeAllTextOption)
+
 	options.addOption("c", false, "get character location and size");
 
 	// add option "-w"
 	options.addOption("w", false, "get word location and size");
 
-
-	// add option "-i"
-	options.addOption("i", true, "input file path");
-
-	// add option "-o"
-	options.addOption("o", true, "output file path");
 
 	Option propertyOption = Option.builder()
 	    .longOpt("D")
@@ -66,7 +71,7 @@ class PDFCommonsCli {
 
 	if(cmd.hasOption("r")) {
 	    String fileName = cmd.getOptionValue("r");
-	    RemoveAllTest.doFile(fileName);
+	    RemoveAllTest.mapFile(inputFile, outputFile);
 	} else if(cmd.hasOption("c")) {
 	    String fileName = cmd.getOptionValue("r");
 	    GetCharLocationAndSize.doFile(fileName);
