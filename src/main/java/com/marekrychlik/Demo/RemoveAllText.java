@@ -61,31 +61,31 @@ public final class RemoveAllText
      */
     public static void main(String[] args) throws IOException
     {
-        if (args.length != 2)
-        {
-            usage();
-        }
-        else
-        {
-            try (PDDocument document = PDDocument.load(new File(args[0])))
-            {
-                if (document.isEncrypted())
-                {
-                    System.err.println(
-                            "Error: Encrypted documents are not supported for this example.");
-                    System.exit(1);
-                }
-                for (PDPage page : document.getPages())
-                {
-                    List<Object> newTokens = createTokensWithoutText(page);
-                    PDStream newContents = new PDStream(document);
-                    writeTokensToStream(newContents, newTokens);
-                    page.setContents(newContents);
-                    processResources(page.getResources());
-                }
-                document.save(args[1]);
-            }
-        }
+	if (args.length != 2) {
+	    usage();
+	} else {
+	    mapFile(args[0], args[1]);
+	}
+    }
+
+
+    public static void mapFile(String inputFile, String outputFile) throws IOException
+    {
+	try (PDDocument document = PDDocument.load(new File(inputFile)) ) {
+	    if (document.isEncrypted()) {
+		    System.err.println("Error: Encrypted documents are not supported for this example.");
+		    System.exit(1);
+	    }
+	    for (PDPage page : document.getPages())
+		{
+		    List<Object> newTokens = createTokensWithoutText(page);
+		    PDStream newContents = new PDStream(document);
+		    writeTokensToStream(newContents, newTokens);
+		    page.setContents(newContents);
+		    processResources(page.getResources());
+		}
+	    document.save(outputFile);
+	}
     }
 
     private static void processResources(PDResources resources) throws IOException
