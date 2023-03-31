@@ -30,6 +30,13 @@ class PDFCommonsCli {
 	// add option "-w"
 	options.addOption("w", false, "get word location and size");
 
+
+	// add option "-i"
+	options.addOption("i", true, "input file path");
+
+	// add option "-o"
+	options.addOption("o", true, "output file path");
+
 	Option propertyOption = Option.builder()
 	    .longOpt("D")
 	    .argName("property=value" )
