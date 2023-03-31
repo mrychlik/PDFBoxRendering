@@ -11,6 +11,7 @@ import org.apache.commons.cli.HelpFormatter;
 
 import java.util.Properties;
 import java.io.PrintWriter;
+import java.io.IOException;
 
 
 class PDFCommonsCli {
@@ -78,16 +79,19 @@ class PDFCommonsCli {
 	    // Print the properties here
 	}
 
-	if(cmd.hasOption("r")) {
-	    String fileName = cmd.getOptionValue("r");
-	    RemoveAllTest.mapFile(inputFile, outputFile);
-	} else if(cmd.hasOption("c")) {
-	    String fileName = cmd.getOptionValue("r");
-	    GetCharLocationAndSize.doFile(fileName);
-	} else if(cmd.hasOption("w")) {	    
+	try {
+	    if(cmd.hasOption("R")) {
+		String[] loc_args = cmd.getArgs();
+		RemoveAllText.mapFile(loc_args[0], loc_args[1]);
+	    } else if(cmd.hasOption("C")) {
+		String fileName = cmd.getOptionValue("r");
+		GetCharLocationAndSize.doFile(fileName);
+	    } else if(cmd.hasOption("w")) {	    
 
+	    }
+	} catch(IOException e) {
+	    e.printStackTrace();
 	}
-
 
     }
 
