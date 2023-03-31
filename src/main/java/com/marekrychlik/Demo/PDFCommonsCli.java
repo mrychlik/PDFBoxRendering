@@ -106,6 +106,9 @@ class PDFCommonsCli {
 	    } else if(cmd.hasOption("W")) {	    
 		String fileName = cmd.getOptionValue("W");
 		GetWordLocationAndSize.doFile(fileName);
+	    } else if(cmd.hasOption("V")) {	    
+		String fileName = cmd.getOptionValue("V");
+		GetWords.doFile(fileName);
 	    }
 	} catch(IOException e) {
 	    e.printStackTrace();
