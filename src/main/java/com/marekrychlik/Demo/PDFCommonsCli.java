@@ -12,7 +12,7 @@ import org.apache.commons.cli.HelpFormatter;
 import java.util.Properties;
 import java.io.PrintWriter;
 import java.io.IOException;
-
+import java.util.List;
 
 class PDFCommonsCli {
     public static void main(String[] args) throws ParseException {
@@ -78,8 +78,8 @@ class PDFCommonsCli {
 
 	try {
 	    if(cmd.hasOption("R")) {
-		String[] loc_args = cmd.getArgs();
-		RemoveAllText.mapFile(loc_args[0], loc_args[1]);
+		List<String> loc_args = cmd.getArgList();
+		RemoveAllText.mapFile(loc_args.get(0), loc_args.get(1));
 	    } else if(cmd.hasOption("C")) {
 		String fileName = cmd.getOptionValue("C");
 		GetCharLocationAndSize.doFile(fileName);
