@@ -20,6 +20,18 @@ class PDFCommonsCli {
 	// add option "-h"
 	options.addOption("h", false, "print help");
 
+	Option propertyOption = Option.builder()
+	    .longOpt("D")
+	    .argName("property=value" )
+	    .hasArg()
+	    .valueSeparator()
+	    .numberOfArgs(2)
+	    .desc("use value for given properties" )
+	    .build();
+
+	options.addOption(propertyOption);
+
+
 	//Create a parser
 	CommandLineParser parser = new DefaultParser();
 
