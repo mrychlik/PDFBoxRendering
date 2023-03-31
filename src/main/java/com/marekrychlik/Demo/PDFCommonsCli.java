@@ -41,6 +41,14 @@ class PDFCommonsCli {
 	if(cmd.hasOption("h")) {
 	    usage(options);
 	}
+
+	if(cmd.hasOption("D")) {
+	    Properties properties = cmd.getOptionProperties("D");
+	    System.out.println("Log: " + properties.getProperty("logFile"));
+	    System.out.println("Operator: " + properties.getProperty("operator"));
+	}
+
+
     }
 
     private static void usage(Options options) {
