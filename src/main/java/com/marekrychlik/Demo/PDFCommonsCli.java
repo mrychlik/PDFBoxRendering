@@ -25,11 +25,10 @@ class PDFCommonsCli {
 	options.addOption("r", false, "remove all text");
       
 	// add option "-c"
-	options.addOption("m", false, "get character location and size");
+	options.addOption("c", false, "get character location and size");
 
 	// add option "-w"
-	options.addOption("m", false, "get word location and size");
-
+	options.addOption("w", false, "get word location and size");
 
 	Option propertyOption = Option.builder()
 	    .longOpt("D")
@@ -57,6 +56,17 @@ class PDFCommonsCli {
 	    Properties properties = cmd.getOptionProperties("D");
 	    System.out.println("Method: " + properties.getProperty("method"));
 	}
+
+	if(cmd.hasOption("r")) {
+
+	} else if(cmd.hasOption("c")) {
+	    String fileName = ; 
+	    GetCharLocationAndSize.doFile(fileName);
+	} else if(cmd.hasOption("w")) {	    
+
+	}
+
+
     }
 
     private static void usage(Options options) {
