@@ -20,6 +20,18 @@ class PDFCommonsCli {
 	// add option "-h"
 	options.addOption("h", false, "print help");
 
+
+	// add option "-r"
+	options.addOption("r", false, "remove all text");
+      
+	// add option "-c"
+	options.addOption("m", false, "get character location and size");
+
+	// add option "-2"
+	options.addOption("m", false, "get word location and size");
+
+
+
 	Option propertyOption = Option.builder()
 	    .longOpt("D")
 	    .argName("property=value" )
