@@ -61,13 +61,14 @@ class PDFCommonsCli {
 
 	if(cmd.hasOption("D")) {
 	    Properties properties = cmd.getOptionProperties("D");
-	    System.out.println("Method: " + properties.getProperty("method"));
+	    // Print the properties here
 	}
 
 	if(cmd.hasOption("r")) {
-
+	    String fileName = cmd.getOptionValue("r");
+	    RemoveAllTest.doFile(fileName);
 	} else if(cmd.hasOption("c")) {
-	    String fileName = ; 
+	    String fileName = cmd.getOptionValue("r");
 	    GetCharLocationAndSize.doFile(fileName);
 	} else if(cmd.hasOption("w")) {	    
 
