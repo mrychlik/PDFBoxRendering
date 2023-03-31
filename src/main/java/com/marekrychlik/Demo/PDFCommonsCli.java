@@ -34,7 +34,7 @@ class PDFCommonsCli {
 	    .desc("Remove all text")
 	    .build();
 
-	options.addOption(removeAllTextOption)
+	options.addOption(removeAllTextOption);
 
 	options.addOption("c", false, "get character location and size");
 
