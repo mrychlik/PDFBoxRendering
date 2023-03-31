@@ -84,7 +84,7 @@ class PDFCommonsCli {
 		String[] loc_args = cmd.getArgs();
 		RemoveAllText.mapFile(loc_args[0], loc_args[1]);
 	    } else if(cmd.hasOption("C")) {
-		String fileName = cmd.getOptionValue("r");
+		String fileName = cmd.getOptionValue("C");
 		GetCharLocationAndSize.doFile(fileName);
 	    } else if(cmd.hasOption("W")) {	    
 
