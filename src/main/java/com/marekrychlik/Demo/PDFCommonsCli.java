@@ -20,6 +20,13 @@ class PDFCommonsCli {
 	// add option "-h"
 	options.addOption("h", false, "print help");
 
+	//Create a parser
+	CommandLineParser parser = new DefaultParser();
+
+	//parse the options passed as command line arguments
+	CommandLine cmd = parser.parse( options, args);
+
+
 	if(cmd.hasOption("h")) {
 	    usage(options);
 	}
