@@ -44,8 +44,7 @@ class PDFCommonsCli {
 
 	if(cmd.hasOption("D")) {
 	    Properties properties = cmd.getOptionProperties("D");
-	    System.out.println("Log: " + properties.getProperty("logFile"));
-	    System.out.println("Operator: " + properties.getProperty("operator"));
+	    System.out.println("Method: " + properties.getProperty("remove-all-text"));
 	}
     }
 
