@@ -327,6 +327,6 @@ public class DrawPrintTextLocations extends PDFTextStripper
      */
     private static void usage()
     {
-        System.err.println("Usage: java " + DrawPrintTextLocations.class.getName() + " <input-pdf>");
+        System.err.println("Usage: java " + DrawPrintTextLocations.class.getName() + " <input-pdf> <output-png>");
     }
 }
