@@ -87,7 +87,7 @@ public class DrawPrintTextLocations extends PDFTextStripper
      */
     public static void main(String[] args) throws IOException
     {
-        if (args.length != 1)
+        if (args.length != 2)
         {
             usage();
         }
@@ -95,7 +95,7 @@ public class DrawPrintTextLocations extends PDFTextStripper
         {
             try (PDDocument document = PDDocument.load(new File(args[0])))
             {
-                DrawPrintTextLocations stripper = new DrawPrintTextLocations(document, args[0]);
+                DrawPrintTextLocations stripper = new DrawPrintTextLocations(document, args[1]);
                 stripper.setSortByPosition(true);
 
                 for (int page = 0; page < document.getNumberOfPages(); ++page)
