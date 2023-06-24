@@ -105,7 +105,7 @@ public final class RemoveAllText
     // }
     // document.close();
 
-    public static List<int[][]> mapFileToImages(String inputFile, String outputFile) throws IOException
+    public static List<int[][]> mapFileToImages(String inputFile) throws IOException
     {
 	try (PDDocument document = PDDocument.load(new File(inputFile)) ) {
 	    if (document.isEncrypted()) {
