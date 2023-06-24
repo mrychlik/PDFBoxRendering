@@ -122,7 +122,7 @@ public final class RemoveAllText
 		    page.setContents(newContents);
 		    processResources(page.getResources());
 		}
-
+	    
 	    PDFRenderer pdfRenderer = new PDFRenderer(document);
 	    for (int page = 0; page < document.getNumberOfPages(); ++page)
 		{ 
