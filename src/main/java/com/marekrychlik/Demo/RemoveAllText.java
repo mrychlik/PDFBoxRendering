@@ -112,6 +112,7 @@ public final class RemoveAllText
 		System.err.println("Error: Encrypted documents are not supported for this example.");
 		System.exit(1);
 	    }
+
 	    List<int[][]> pageImages = new ArrayList<>();
 	    for (PDPage page : document.getPages())
 		{
@@ -121,6 +122,7 @@ public final class RemoveAllText
 		    page.setContents(newContents);
 		    processResources(page.getResources());
 		}
+
 	    PDFRenderer pdfRenderer = new PDFRenderer(document);
 	    for (int page = 0; page < document.getNumberOfPages(); ++page)
 		{ 
