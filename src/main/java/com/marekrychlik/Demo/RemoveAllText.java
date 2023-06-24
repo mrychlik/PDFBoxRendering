@@ -217,8 +217,7 @@ public final class RemoveAllText
 	int[][] result = new int[height][width];
 	if (hasAlphaChannel) {
 	    int numberOfValues = 4;
-	    for (int valueIndex = 0, row = 0, col = 0; valueIndex + numberOfValues - 1 < pixelData.length; valueIndex += numberOfValues) {
-            
+	    for (int valueIndex = 0, row = 0, col = 0; valueIndex + numberOfValues - 1 < pixelData.length; valueIndex += numberOfValues) {            
 		int argb = 0;
 		argb += (((int) pixelData[valueIndex] & 0xff) << 24); // alpha value
 		argb += ((int) pixelData[valueIndex + 1] & 0xff); // blue value
