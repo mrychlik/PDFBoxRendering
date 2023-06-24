@@ -22,6 +22,8 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.image.BufferedImage;
+import javax.imageio.*;
+import org.apache.pdfbox.rendering.*;
 
 import org.apache.pdfbox.contentstream.PDContentStream;
 import org.apache.pdfbox.contentstream.operator.Operator;
