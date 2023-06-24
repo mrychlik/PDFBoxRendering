@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.awt.image.BufferedImage;
 import javax.imageio.*;
-import org.apache.pdfbox.rendering.*;
+
 
 import org.apache.pdfbox.contentstream.PDContentStream;
 import org.apache.pdfbox.contentstream.operator.Operator;
@@ -39,6 +39,7 @@ import org.apache.pdfbox.pdmodel.graphics.PDXObject;
 import org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject;
 import org.apache.pdfbox.pdmodel.graphics.pattern.PDAbstractPattern;
 import org.apache.pdfbox.pdmodel.graphics.pattern.PDTilingPattern;
+import org.apache.pdfbox.rendering.*;
 
 /**
  * This is an example on how to remove all text from PDF document.
@@ -126,7 +127,8 @@ public final class RemoveAllText
 	         BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 300, ImageType.RGB);
 
 	         // suffix in filename will be used as the file format
-	         ImageIOUtil.writeImage(bim, inputFile + "-" + (page+1) + ".png", 300);
+		 String outFile = inputFile + "-" + (page + 1) + ".png";
+	         ImageIO.write(bim, "JPEG", new File(outFile));
 	     }
 	     document.close();
 
