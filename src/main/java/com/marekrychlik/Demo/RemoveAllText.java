@@ -117,6 +117,7 @@ public final class RemoveAllText
 	    if (pages == null) {
 		pages = IntStream.rangeClosed(1, numPages).toArray();
 	    }
+	    numPages = pages.length;
 	    System.out.println("Pages: " + Arrays.toString(pages));
 	    for (int j=0; j < numPages; ++j) {
 		int pagenum = pages[j];
