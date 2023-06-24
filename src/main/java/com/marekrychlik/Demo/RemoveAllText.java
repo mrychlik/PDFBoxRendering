@@ -115,7 +115,7 @@ public final class RemoveAllText
 	    }
 	    int numPages = document.getNumberOfPages();
 	    if (pages == null) {
-		pages = IntStream.range(0, numPages).toArray();
+		pages = IntStream.rangeClosed(1, numPages).toArray();
 	    }
 	    System.out.println("Pages: " + Arrays.toString(pages));
 	    for (int j=0; j < numPages; ++j) {
