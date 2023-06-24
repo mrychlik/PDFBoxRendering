@@ -133,7 +133,7 @@ public final class RemoveAllText
 		// suffix in filename will be used as the file format
 		String imgFile = outputFile + "-" + j + ".jpg";
 		ImageIO.write(bim, "JPEG", new File(imgFile));
-		pageImages[pagenum]=imgFile;
+		pageImages[j]=imgFile;
 		// pageImages.set(page, get2DPixelArrayFast(bim));
 	    }
 	    document.close();
