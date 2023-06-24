@@ -131,7 +131,7 @@ public final class RemoveAllText
 		int pagenum = pages[j];
 		BufferedImage bim = pdfRenderer.renderImageWithDPI(pagenum, 600, ImageType.RGB);
 		// suffix in filename will be used as the file format
-		String imgFile = outputFile + "-" + page + ".jpg";
+		String imgFile = outputFile + "-" + j + ".jpg";
 		ImageIO.write(bim, "JPEG", new File(imgFile));
 		pageImages[page]=imgFile;
 		// pageImages.set(page, get2DPixelArrayFast(bim));
