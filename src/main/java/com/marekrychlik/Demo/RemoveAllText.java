@@ -105,7 +105,7 @@ public final class RemoveAllText
     // }
     // document.close();
 
-    public static void mapFileToImages(String inputFile, String outputFile) throws IOException
+    public static List<String> mapFileToImages(String inputFile, String outputFile) throws IOException
     {
 	try (PDDocument document = PDDocument.load(new File(inputFile)) ) {
 	    if (document.isEncrypted()) {
@@ -113,7 +113,7 @@ public final class RemoveAllText
 		System.exit(1);
 	    }
 
-	    List<int[][]> pageImages = new ArrayList<>();
+	    List<String> pageImages = new ArrayList<>();
 	    for (PDPage page : document.getPages())
 		{
 		    List<Object> newTokens = createTokensWithoutText(page);
@@ -128,12 +128,14 @@ public final class RemoveAllText
 		{ 
 		    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 600, ImageType.RGB);
 		    // suffix in filename will be used as the file format
-		    ImageIO.write(bim, "JPEG", new File(outputFile + "-" + page +".jpg"));
+		    String imgFile = outputFile + "-" + page + ".jpg";
+		    ImageIO.write(bim, "JPEG", new File(imgFile));
+		    pageImages.add(imgFile);
 		    // pageImages.set(page, get2DPixelArrayFast(bim));
 		}
 	    document.close();
 	    // document.save(outputFile);
-	    //return pageImages;
+	    return pageImages;
 	}
     }
     
