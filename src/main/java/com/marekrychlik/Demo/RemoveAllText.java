@@ -206,6 +206,51 @@ public final class RemoveAllText
         return newTokens;
     }
 
+    private static int[][] get2DPixelArrayFast(BufferedImage image) {
+	byte[] pixelData = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
+	int width = image.getWidth();
+	int height = image.getHeight();
+	boolean hasAlphaChannel = image.getAlphaRaster() != null;
+
+	int[][] result = new int[height][width];
+	if (hasAlphaChannel) {
+	    int numberOfValues = 4;
+	    for (int valueIndex = 0, row = 0, col = 0; valueIndex + numberOfValues - 1 < pixelData.length; valueIndex += numberOfValues) {
+            
+		int argb = 0;
+		argb += (((int) pixelData[valueIndex] & 0xff) << 24); // alpha value
+		argb += ((int) pixelData[valueIndex + 1] & 0xff); // blue value
+		argb += (((int) pixelData[valueIndex + 2] & 0xff) << 8); // green value
+		argb += (((int) pixelData[valueIndex + 3] & 0xff) << 16); // red value
+		result[row][col] = argb;
+
+		col++;
+		if (col == width) {
+		    col = 0;
+		    row++;
+		}
+	    }
+	} else {
+	    int numberOfValues = 3;
+	    for (int valueIndex = 0, row = 0, col = 0; valueIndex + numberOfValues - 1 < pixelData.length; valueIndex += numberOfValues) {
+		int argb = 0;
+		argb += -16777216; // 255 alpha value (fully opaque)
+		argb += ((int) pixelData[valueIndex] & 0xff); // blue value
+		argb += (((int) pixelData[valueIndex + 1] & 0xff) << 8); // green value
+		argb += (((int) pixelData[valueIndex + 2] & 0xff) << 16); // red value
+		result[row][col] = argb;
+
+		col++;
+		if (col == width) {
+		    col = 0;
+		    row++;
+		}
+	    }
+	}
+
+	return result;
+    }
+
     /**
      * This will print the usage for this document.
      */
