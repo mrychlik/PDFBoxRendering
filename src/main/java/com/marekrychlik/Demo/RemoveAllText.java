@@ -113,7 +113,7 @@ public final class RemoveAllText
 		System.exit(1);
 	    }
 	    int numPages = document.getNumberOfPages();
-	    if (pages.length == 0) {
+	    if (pages == null) {
 		pages = IntStream.rangeClosed(1, numPages).toArray();
 	    }
 	    for (int j=0; j < numPages; ++j) {
