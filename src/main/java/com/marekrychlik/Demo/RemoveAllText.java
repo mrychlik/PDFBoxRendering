@@ -112,6 +112,10 @@ public final class RemoveAllText
 		System.err.println("Error: Encrypted documents are not supported for this example.");
 		System.exit(1);
 	    }
+	    int numPages = document.getNumberOfPages();
+	    if (pages.length == 0) {
+		pages = IntStream.rangeClosed(1, numPages).toArray();
+	    }
 	    for (int page=0; page < numPages; ++page) {
 		PDPage page = document.getPages().get(page);
 		List<Object> newTokens = createTokensWithoutText(page);
