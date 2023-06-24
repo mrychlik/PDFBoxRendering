@@ -105,7 +105,7 @@ public final class RemoveAllText
     // }
     // document.close();
 
-    public static List<String> mapFileToImages(String inputFile, String outputFile) throws IOException
+    public static String[] mapFileToImages(String inputFile, String outputFile) throws IOException
     {
 	try (PDDocument document = PDDocument.load(new File(inputFile)) ) {
 	    if (document.isEncrypted()) {
@@ -130,7 +130,7 @@ public final class RemoveAllText
 		    // suffix in filename will be used as the file format
 		    String imgFile = outputFile + "-" + page + ".jpg";
 		    ImageIO.write(bim, "JPEG", new File(imgFile));
-		    pageImages.add(imgFile);
+		    pageImages[page]=imgFile;
 		    // pageImages.set(page, get2DPixelArrayFast(bim));
 		}
 	    document.close();
