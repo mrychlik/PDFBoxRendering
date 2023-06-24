@@ -40,6 +40,7 @@ import org.apache.pdfbox.pdmodel.graphics.form.PDFormXObject;
 import org.apache.pdfbox.pdmodel.graphics.pattern.PDAbstractPattern;
 import org.apache.pdfbox.pdmodel.graphics.pattern.PDTilingPattern;
 import org.apache.pdfbox.rendering.*;
+import org.apache.pdfbox.tools.imageio.ImageIOUtil
 
 /**
  * This is an example on how to remove all text from PDF document.
