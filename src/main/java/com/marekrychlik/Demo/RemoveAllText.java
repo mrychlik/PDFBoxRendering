@@ -121,7 +121,7 @@ public final class RemoveAllText
 	    System.out.println("Pages: " + Arrays.toString(pages));
 	    for (int j=0; j < numPages; ++j) {
 		int pagenum = pages[j];
-		PDPage page = document.getPages().get(pagenum);
+		PDPage page = document.getPages().get(pagenum-1);
 		List<Object> newTokens = createTokensWithoutText(page);
 		    PDStream newContents = new PDStream(document);
 		    writeTokensToStream(newContents, newTokens);
