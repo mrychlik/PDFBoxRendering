@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.image.BufferedImage;
 
 import org.apache.pdfbox.contentstream.PDContentStream;
 import org.apache.pdfbox.contentstream.operator.Operator;
@@ -88,6 +89,19 @@ public final class RemoveAllText
 	}
     }
 
+    // Solution for the 2.0 version:
+    //
+    // PDDocument document = PDDocument.load(new File(pdfFilename));
+    // PDFRenderer pdfRenderer = new PDFRenderer(document);
+    // for (int page = 0; page < document.getNumberOfPages(); ++page)
+    // { 
+    //     BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 300, ImageType.RGB);
+
+    //     // suffix in filename will be used as the file format
+    //     ImageIOUtil.writeImage(bim, pdfFilename + "-" + (page+1) + ".png", 300);
+    // }
+    // document.close();
+
     public static void mapFileToImages(String inputFile, String outputFile) throws IOException
     {
 	try (PDDocument document = PDDocument.load(new File(inputFile)) ) {
@@ -95,6 +109,7 @@ public final class RemoveAllText
 		    System.err.println("Error: Encrypted documents are not supported for this example.");
 		    System.exit(1);
 	    }
+	    List<BufferedImage> bufferedImages;
 	    for (PDPage page : document.getPages())
 		{
 		    List<Object> newTokens = createTokensWithoutText(page);
@@ -103,6 +118,16 @@ public final class RemoveAllText
 		    page.setContents(newContents);
 		    processResources(page.getResources());
 		}
+	    PDFRenderer pdfRenderer = new PDFRenderer(document);
+	     for (int page = 0; page < document.getNumberOfPages(); ++page)
+	     { 
+	         BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 300, ImageType.RGB);
+
+	         // suffix in filename will be used as the file format
+	         ImageIOUtil.writeImage(bim, inputFile + "-" + (page+1) + ".png", 300);
+	     }
+	     document.close();
+
 	    document.save(outputFile);
 	}
     }
