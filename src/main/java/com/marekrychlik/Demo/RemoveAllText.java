@@ -122,14 +122,14 @@ public final class RemoveAllText
 		    processResources(page.getResources());
 		}
 	    PDFRenderer pdfRenderer = new PDFRenderer(document);
-	     for (int page = 0; page < document.getNumberOfPages(); ++page)
-	     { 
-	         BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 600, ImageType.RGB);
-	         // suffix in filename will be used as the file format
-	         ImageIO.write(bim, "JPEG", new File(outputFile + "-" + page +".jpg"));
-	     }
-	     document.close();
-	     // document.save(outputFile);
+	    for (int page = 0; page < document.getNumberOfPages(); ++page)
+		{ 
+		    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 600, ImageType.RGB);
+		    // suffix in filename will be used as the file format
+		    ImageIO.write(bim, "JPEG", new File(outputFile + "-" + page +".jpg"));
+		}
+	    document.close();
+	    // document.save(outputFile);
 	}
     }
     
