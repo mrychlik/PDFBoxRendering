@@ -115,8 +115,8 @@ public final class RemoveAllText
 	    int numPages = document.getNumberOfPages();
 	    if (pages == null) {
 		pages = IntStream.rangeClosed(0, numPages-1).toArray();
-		System.out.println(pages);
 	    }
+	    System.out.println("Pages" + pages);
 	    for (int j=0; j < numPages; ++j) {
 		int pagenum = pages[j];
 		PDPage page = document.getPages().get(pagenum-1);
