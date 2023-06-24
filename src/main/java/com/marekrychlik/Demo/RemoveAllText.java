@@ -113,9 +113,9 @@ public final class RemoveAllText
 		System.exit(1);
 	    }
 
-	    for (PDPage page : document.getPages())
-		{
-		    List<Object> newTokens = createTokensWithoutText(page);
+	    for (int page=0; page < numPages; ++page) {
+		PDPage page = document.getPages().get(page);
+		List<Object> newTokens = createTokensWithoutText(page);
 		    PDStream newContents = new PDStream(document);
 		    writeTokensToStream(newContents, newTokens);
 		    page.setContents(newContents);
