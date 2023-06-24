@@ -133,7 +133,7 @@ public final class RemoveAllText
 		}
 	    document.close();
 	    // document.save(outputFile);
-	    return pageImages;
+	    //return pageImages;
 	}
     }
     
