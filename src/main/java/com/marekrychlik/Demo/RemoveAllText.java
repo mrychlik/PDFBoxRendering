@@ -113,7 +113,6 @@ public final class RemoveAllText
 		System.exit(1);
 	    }
 
-	    List<String> pageImages = new ArrayList<>();
 	    for (PDPage page : document.getPages())
 		{
 		    List<Object> newTokens = createTokensWithoutText(page);
@@ -123,8 +122,10 @@ public final class RemoveAllText
 		    processResources(page.getResources());
 		}
 	    
+	    int numPages = document.getNumberOfPages();
+	    String[] pageImages = new String[numPages];
 	    PDFRenderer pdfRenderer = new PDFRenderer(document);
-	    for (int page = 0; page < document.getNumberOfPages(); ++page)
+	    for (int page = 0; page < numPages; ++page)
 		{ 
 		    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 600, ImageType.RGB);
 		    // suffix in filename will be used as the file format
