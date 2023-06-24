@@ -119,7 +119,7 @@ public final class RemoveAllText
 	    }
 	    System.out.println("Pages: " + Arrays.toString(pages));
 	    for (int j=0; j < numPages; ++j) {
-		int pagenum = pages[j-1];
+		int pagenum = pages[j+1];
 		PDPage page = document.getPages().get(pagenum);
 		List<Object> newTokens = createTokensWithoutText(page);
 		    PDStream newContents = new PDStream(document);
@@ -130,7 +130,7 @@ public final class RemoveAllText
 	    String[] pageImages = new String[numPages];
 	    PDFRenderer pdfRenderer = new PDFRenderer(document);
 	    for (int j = 0; j < numPages; ++j) { 
-		int pagenum = pages[j];
+		int pagenum = pages[j+1];
 		BufferedImage bim = pdfRenderer.renderImageWithDPI(pagenum, 600, ImageType.RGB);
 		// suffix in filename will be used as the file format
 		String imgFile = outputFile + "-" + pagenum + ".jpg";
