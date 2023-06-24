@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.awt.image.BufferedImage;
 import javax.imageio.*;
@@ -116,7 +117,7 @@ public final class RemoveAllText
 	    if (pages == null) {
 		pages = IntStream.rangeClosed(0, numPages-1).toArray();
 	    }
-	    System.out.println("Pages: " + Integer.toString(pages));
+	    System.out.println("Pages: " + Arrays.toString(pages));
 	    for (int j=0; j < numPages; ++j) {
 		int pagenum = pages[j];
 		PDPage page = document.getPages().get(pagenum-1);
