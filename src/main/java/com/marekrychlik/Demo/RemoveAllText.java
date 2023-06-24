@@ -127,15 +127,15 @@ public final class RemoveAllText
 		}
 	    String[] pageImages = new String[numPages];
 	    PDFRenderer pdfRenderer = new PDFRenderer(document);
-	    for (int page = 0; page < numPages; ++page)
-		{ 
-		    BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 600, ImageType.RGB);
-		    // suffix in filename will be used as the file format
-		    String imgFile = outputFile + "-" + page + ".jpg";
-		    ImageIO.write(bim, "JPEG", new File(imgFile));
-		    pageImages[page]=imgFile;
-		    // pageImages.set(page, get2DPixelArrayFast(bim));
-		}
+	    for (int j = 0; j < numPages; ++j) { 
+		int pagenum = pages[j];
+		BufferedImage bim = pdfRenderer.renderImageWithDPI(pagenum, 600, ImageType.RGB);
+		// suffix in filename will be used as the file format
+		String imgFile = outputFile + "-" + page + ".jpg";
+		ImageIO.write(bim, "JPEG", new File(imgFile));
+		pageImages[page]=imgFile;
+		// pageImages.set(page, get2DPixelArrayFast(bim));
+	    }
 	    document.close();
 	    // document.save(outputFile);
 	    return pageImages;
