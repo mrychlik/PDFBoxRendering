@@ -127,7 +127,7 @@ public final class RemoveAllText
 	         BufferedImage bim = pdfRenderer.renderImageWithDPI(page, 300, ImageType.RGB);
 
 	         // suffix in filename will be used as the file format
-	         ImageIO.write(bim, "JPEG", new File(outputFile));
+	         ImageIO.write(bim, "JPEG", new File(outputFile+page+".jpg"));
 	     }
 	     document.close();
 	     // document.save(outputFile);
