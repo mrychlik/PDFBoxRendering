@@ -125,8 +125,6 @@ public final class RemoveAllText
 		    page.setContents(newContents);
 		    processResources(page.getResources());
 		}
-	    
-	    int numPages = document.getNumberOfPages();
 	    String[] pageImages = new String[numPages];
 	    PDFRenderer pdfRenderer = new PDFRenderer(document);
 	    for (int page = 0; page < numPages; ++page)
