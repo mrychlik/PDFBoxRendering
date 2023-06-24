@@ -97,8 +97,11 @@ class PDFCommonsCli {
 	}
 
 	try {
-	    if(cmd.hasOption("R")) {
+	    if (cmd.hasOption("R")) {
 		String[] loc_args = cmd.getOptionValues("R");
+		RemoveAllText.mapFile(loc_args[0], loc_args[1]);
+	    } else if(cmd.hasOption("I")) {
+		String[] loc_args = cmd.getOptionValues("I");
 		RemoveAllText.mapFile(loc_args[0], loc_args[1]);
 	    } else if(cmd.hasOption("C")) {
 		String fileName = cmd.getOptionValue("C");
