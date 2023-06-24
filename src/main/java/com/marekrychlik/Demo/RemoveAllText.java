@@ -130,8 +130,7 @@ public final class RemoveAllText
 	         ImageIO.write(bim, "JPEG", new File(outputFile));
 	     }
 	     document.close();
-
-	    document.save(outputFile);
+	     //document.save(outputFile);
 	}
     }
     
